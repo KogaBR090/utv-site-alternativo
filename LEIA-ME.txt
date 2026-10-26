@@ -1,0 +1,30 @@
+SITE DA UTV PRODUTORA (VERSÃO ALTERNATIVA: SALA DE CONTROLE)
+
+O site é estático: não tem banco de dados nem painel. Funciona em qualquer hospedagem
+de arquivos (Netlify, Vercel, GitHub Pages ou a hospedagem atual da UTV).
+
+COMO PUBLICAR
+Netlify: entre em app.netlify.com/drop e arraste a pasta inteira do site. Pronto.
+
+O QUE EDITAR NO DIA A DIA
+Só o arquivo assets/js/conteudo.js:
+  - trabalhos do portfólio (título, cliente, ano, categoria e link do YouTube);
+  - link do showreel;
+  - ID do canal do YouTube (para a transmissão ao vivo aparecer no Canal 24h);
+  - ID da playlist de reprises.
+A capa de cada trabalho vem sozinha do YouTube.
+
+TEXTOS FIXOS
+Contatos, história e nomes de clientes estão em index.html e canal.html,
+marcados entre colchetes, por exemplo [número] ou [Cliente].
+
+IMAGENS
+As imagens em assets/img são provisórias. Troque por fotos reais com o mesmo nome
+de arquivo, em JPG com cerca de 1920 px de largura.
+
+CORES
+As cores ficam no começo de assets/css/site.css (variáveis --red, --ink etc.).
+
+BIBLIOTECAS
+GSAP 3.13 (ScrollTrigger, SplitText, Flip) e Lenis 1.1, já incluídas em assets/vendor.
+Quem usa "reduzir movimento" no sistema vê o site sem animações.

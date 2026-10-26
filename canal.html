@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Canal UTV 24h</title>
+<meta name="description" content="Canal UTV ao vivo, 24 horas por dia: programação, reprises e onde assistir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="idle-hint" data-idle-hint aria-hidden="true"><span class="idle-hint__track"></span><span data-idle-text>Role para continuar</span></div>
+
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__logo" href="index.html" aria-label="UTV, início"><span class="nav__tally"></span>UTV</a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="index.html#portfolio">Portfólio</a>
+      <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="canal.html" aria-current="page"><span class="live-dot"></span>Canal 24h</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-label="Menu">
+  <button class="menu__close" type="button">Fechar</button>
+  <a href="index.html">Início</a>
+  <a href="index.html#portfolio">Portfólio</a>
+  <a href="index.html#servicos">Serviços</a>
+  <a href="index.html#sobre">Sobre</a>
+  <a href="index.html#contato">Contato</a>
+  <a href="canal.html">Canal 24h</a>
+</div>
+
+<main>
+  <section class="scene ch-hero" data-nav="dark">
+    <div class="scene__media" data-parallax><img src="assets/img/palco.jpg" alt=""></div>
+    <div class="scene__shade"></div>
+    <div class="wrap ch-hero__inner">
+      <div class="ch-hero__head">
+        <h1 class="display d-xl" data-hero-title>Canal UTV</h1>
+        <p class="lede" style="max-width: 34ch" data-fade>Programação própria, reprises e acervo, no ar 24 horas por dia.</p>
+      </div>
+      <div class="player" data-live>
+        <p class="placeholder">[Live do YouTube: preencha o ID do canal em conteudo.js]</p>
+        <div class="umd"><span><span class="tally tally--pgm">No ar</span>Canal UTV</span><span>Londrina <span data-clock>00:00:00</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-nav="light" aria-labelledby="grade">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="grade" class="display d-m" data-lines>Um dia no canal</h2>
+        <p class="lede" style="max-width: 380px">O que passa em cada parte do dia, de segunda a sexta. Os horários são aproximados.</p>
+      </div>
+      <div class="timeline__scroller">
+        <div class="timeline">
+          <div class="timeline__scale" aria-hidden="true">
+            <div class="timeline__hours"><span>0h</span><span>6h</span><span>12h</span><span>18h<span>24h</span></span></div>
+            <div class="timeline__rule" data-rule><span class="timeline__elapsed" data-elapsed></span></div>
+            <div class="timeline__now" data-now><span class="timeline__tag">Agora</span></div>
+          </div>
+          <ol>
+            <li data-slot><span class="when">Madrugada</span><span class="what">Reprises e acervo UTV</span><span class="more">Documentários e programas que já foram ao ar.</span></li>
+            <li data-slot><span class="when">Manhã</span><span class="what">[Telejornal da manhã]</span><span class="more">[Programa], [programa]</span></li>
+            <li data-slot><span class="when">Tarde</span><span class="what">[Telejornal do meio-dia]</span><span class="more">[Documentários e eventos]</span></li>
+            <li data-slot><span class="when">Noite</span><span class="what">[Telejornal da noite]</span><span class="more">[Programa de esportes]</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-nav="light" aria-labelledby="reprises">
+    <div class="wrap reprise">
+      <div class="reprise__text">
+        <h2 id="reprises" class="display d-m" data-lines>Perdeu? Tem reprise</h2>
+        <p class="lede">Os programas que já foram ao ar ficam numa playlist do YouTube. Quando a UTV publica um episódio, ele aparece aqui sozinho.</p>
+      </div>
+      <div class="reprise__screen" data-clip data-playlist>
+        <img src="assets/img/ilha.jpg" alt="" data-inner-parallax>
+        <p class="placeholder">[Playlist do YouTube: preencha o ID em conteudo.js]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="onde" class="section where" data-nav="light" aria-labelledby="onde-titulo">
+    <div class="wrap">
+      <h2 id="onde-titulo" class="display d-m" data-lines>Onde assistir</h2>
+      <div class="lts" data-lts>
+        <div class="lt"><b>Na TV</b><span>Canal [nº], [operadora]</span></div>
+        <div class="lt"><b>Internet</b><span>Aqui e no YouTube @[canal]</span></div>
+        <a class="lt" href="https://wa.me/5543000000000"><b>Anunciar</b><span>WhatsApp (43) [número]</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-nav="dark">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h2>Navegação</h2>
+        <a href="index.html">Início</a><a href="index.html#portfolio">Portfólio</a><a href="index.html#servicos">Serviços</a><a href="index.html#sobre">Sobre</a><a href="index.html#contato">Contato</a>
+      </div>
+      <div class="footer__col">
+        <h2>Redes</h2>
+        <a href="https://instagram.com/">Instagram</a><a href="https://www.youtube.com/">YouTube</a><a href="https://vimeo.com/">Vimeo</a><a href="https://www.linkedin.com/">LinkedIn</a>
+      </div>
+      <div class="footer__col">
+        <h2>Estúdio</h2>
+        <p>[Rua, número]<br>Londrina, PR<br>[CEP]</p>
+        <p>Segunda a sexta, [9h às 18h]</p>
+      </div>
+      <div class="footer__col">
+        <h2>Canal UTV</h2>
+        <a class="footer__air" href="canal.html"><span class="live-dot"></span>No ar agora</a>
+        <a href="#onde">Anuncie no Canal UTV</a>
+        <a href="index.html#contato">Trabalhe conosco</a>
+      </div>
+    </div>
+    <p class="footer__mark" aria-hidden="true">UTV</p>
+    <div class="footer__base">
+      <span>© 2026 UTV Produtora. CNPJ [00.000.000/0000-00]</span>
+      <a href="#">Política de privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/Flip.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/conteudo.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
