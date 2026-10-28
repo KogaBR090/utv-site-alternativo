@@ -63,18 +63,35 @@
       if (!w.hidden) first = false;
     });
   }
+  var filterToken = 0;
   function applyFilter(cat) {
     $$('button', filters).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.cat === cat)); });
     var items = $$('.work', works);
-    var state = motion && window.Flip ? window.Flip.getState(items) : null;
+    var flip = motion && window.Flip;
+    if (flip) { flip.killFlipsOf(items, true); G.killTweensOf(works); works.style.height = ''; }
+    var oldH = works.offsetHeight;
+    var state = flip ? flip.getState(items) : null;
+    var token = ++filterToken;
+    // Durante a troca os textos ficam ocultos: a revelação deles depende da rolagem e só vale depois do recálculo
+    var release = function () {
+      if (token !== filterToken) return;
+      if (ST) ST.refresh();
+      requestAnimationFrame(function () { if (token === filterToken) works.classList.remove('is-filtering'); });
+    };
+    if (state) works.classList.add('is-filtering');
     items.forEach(function (w) { w.hidden = !(cat === 'Todos' || w.dataset.cat === cat); });
     markFeature();
     if (state) {
+      // Os cards saem do fluxo durante a troca: a altura da lista acompanha a animação para as seções de baixo não subirem por cima
+      var newH = works.offsetHeight;
+      works.style.height = oldH + 'px';
+      G.to(works, { height: newH, duration: 0.8, ease: 'power3.inOut', onComplete: function () { works.style.height = ''; } });
       window.Flip.from(state, {
         duration: 0.8, ease: 'power3.inOut', absolute: true, nested: true,
         onEnter: function (els) { return G.fromTo(els, { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.2 }); },
-        onComplete: function () { ST.refresh(); }
+        onComplete: release
       });
+      setTimeout(release, 1600);
     } else if (ST) { ST.refresh(); }
   }
   if (works && filters) {
@@ -88,6 +105,10 @@
       b.dataset.title = t.titulo || '';
       b.innerHTML = '<span class="work__media"><img alt="" loading="lazy"></span>' +
         '<span class="work__umd"><span class="work__title"></span><span class="work__info"></span></span>';
+      // O texto só aparece depois da foto: enquanto ela carrega, fica só a faixa em branco
+      var show = function () { b.classList.add('is-loaded'); };
+      $('img', b).addEventListener('load', show);
+      $('img', b).addEventListener('error', show);
       $('img', b).src = t.imagem || (id ? 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg' : FALLBACK[i % FALLBACK.length]);
       $('.work__title', b).textContent = t.titulo || '';
       $('.work__info', b).textContent = [t.cliente, t.ano].filter(Boolean).join(', ');

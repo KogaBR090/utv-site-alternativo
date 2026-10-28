@@ -203,9 +203,12 @@ p { text-wrap: pretty; }
 }
 .work__media::before { content: ""; position: absolute; inset: 0; z-index: 1; border: 3px solid var(--red); opacity: 0; transition: opacity .3s ease; }
 .work:hover .work__media::before, .work:hover .work__media::after, .work:focus-visible .work__media::before, .work:focus-visible .work__media::after { opacity: 1; }
-.work__umd { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 16px; background: var(--console); color: #FFFFFF; }
+.work__umd { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 36px 16px 14px; background: var(--console); color: #FFFFFF; }
 .work__title { font-stretch: 75%; font-weight: 800; font-size: clamp(20px, 1.9vw, 26px); line-height: 1.1; text-transform: uppercase; }
 .work__info { font-family: var(--mono); font-size: 12px; color: #C9C9C9; white-space: nowrap; }
+.work:not(.is-loaded) .work__title, .work:not(.is-loaded) .work__info { opacity: 0; }
+.work__title, .work__info { transition: opacity .4s ease; }
+.works.is-filtering .work__title, .works.is-filtering .work__info { opacity: 0; transition: none; }
 .work.is-feature { grid-column: 1 / -1; }
 .work.is-feature .work__media { aspect-ratio: 21 / 9; min-height: 320px; }
 .work.is-feature .work__title { font-size: clamp(26px, 2.8vw, 40px); }
@@ -217,7 +220,7 @@ p { text-wrap: pretty; }
 
 /* Serviços: espelho com luz de etapa */
 .rundown__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 48px; }
-.rundown__bar { position: relative; height: 2px; margin-top: 56px; background: var(--line); }
+.rundown__bar { position: relative; height: 2px; margin-top: clamp(96px, 10vw, 148px); background: var(--line); }
 .rundown__bar span { position: absolute; inset: 0; background: var(--red); transform-origin: 0 50%; transform: scaleX(0); }
 .rundown__steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
 .rundown__steps li { padding-top: 32px; min-width: 0; }
