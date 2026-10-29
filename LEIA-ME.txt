@@ -8,15 +8,16 @@ Netlify: entre em app.netlify.com/drop e arraste a pasta inteira do site. Pronto
 
 O QUE EDITAR NO DIA A DIA
 Só o arquivo assets/js/conteudo.js:
-  - trabalhos do portfólio (título, cliente, ano, categoria e link do YouTube);
+  - trabalhos do portfólio (título, cliente, ano, categoria, link do YouTube, capa e prévia em vídeo);
   - link do showreel;
   - ID do canal do YouTube (para a transmissão ao vivo aparecer no Canal 24h);
   - ID da playlist de reprises.
-A capa de cada trabalho vem sozinha do YouTube.
+Sem capa definida, a capa vem automaticamente do YouTube. Com "arquivo", o vídeo toca direto do site;
+com "video" (link do YouTube), o YouTube tem prioridade. "foco" ajusta o enquadramento da capa.
 
 TEXTOS FIXOS
 Contatos, história e nomes de clientes estão em index.html e canal.html,
-marcados entre colchetes, por exemplo [número] ou [Cliente].
+e já estão preenchidos com os dados atuais da UTV. Basta editar o texto direto nesses arquivos.
 
 IMAGENS
 As imagens em assets/img são provisórias. Troque por fotos reais com o mesmo nome

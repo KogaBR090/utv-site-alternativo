@@ -102,6 +102,7 @@
       b.className = 'work';
       b.dataset.cat = t.categoria || '';
       b.dataset.video = t.video || '';
+      b.dataset.arquivo = t.arquivo || '';
       b.dataset.title = t.titulo || '';
       b.innerHTML = '<span class="work__media"><img alt="" loading="lazy"></span>' +
         '<span class="work__umd"><span class="work__title"></span><span class="work__info"></span></span>';
@@ -110,6 +111,7 @@
       $('img', b).addEventListener('load', show);
       $('img', b).addEventListener('error', show);
       $('img', b).src = t.imagem || (id ? 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg' : FALLBACK[i % FALLBACK.length]);
+      if (t.foco) $('img', b).style.objectPosition = t.foco;
       $('.work__title', b).textContent = t.titulo || '';
       $('.work__info', b).textContent = [t.cliente, t.ano].filter(Boolean).join(', ');
       works.appendChild(b);
@@ -128,14 +130,19 @@
 
   /* ---------- Janela de vídeo ---------- */
   var lb = $('[data-lightbox]');
-  function openVideo(url, title) {
+  function openVideo(url, title, arquivo) {
     if (!lb) return;
     $('#lightbox-title', lb).textContent = title || '';
     var screen = $('[data-screen]', lb);
     screen.innerHTML = '';
     var id = ytId(url);
     if (id) screen.appendChild(makeFrame('https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0', title));
-    else { var p = document.createElement('p'); p.className = 'placeholder'; p.textContent = '[Cole o link do YouTube deste vídeo em conteudo.js]'; screen.appendChild(p); }
+    else if (arquivo) {
+      var vd = document.createElement('video');
+      vd.src = arquivo; vd.controls = true; vd.autoplay = true; vd.playsInline = true;
+      screen.appendChild(vd);
+    }
+    else { var p = document.createElement('p'); p.className = 'placeholder'; p.textContent = 'Vídeo indisponível no momento.'; screen.appendChild(p); }
     if (typeof lb.showModal === 'function') lb.showModal(); else lb.setAttribute('open', '');
     if (lenis) lenis.stop();
     if (motion) {
@@ -149,7 +156,11 @@
   }
   document.addEventListener('click', function (e) {
     var v = e.target.closest('[data-video]');
-    if (v) { openVideo(v.dataset.video === 'showreel' ? C.showreel : v.dataset.video, v.dataset.title); return; }
+    if (v) {
+      var reel = v.dataset.video === 'showreel';
+      openVideo(reel ? C.showreel : v.dataset.video, v.dataset.title, reel ? C.showreelArquivo : v.dataset.arquivo);
+      return;
+    }
     if (e.target.closest('[data-close]') && lb) lb.close();
   });
 
