@@ -31,7 +31,9 @@ window.UTV = {
   trabalhos: [
     { titulo: 'Construindo o Amanhã', cliente: 'Hub Turismo', ano: '', categoria: 'Institucional', video: '', arquivo: 'assets/media/hub-turismo.mp4', imagem: 'assets/media/hub-turismo.jpg' },
     { titulo: 'Deus Invisível', cliente: 'Campanha Hightea', ano: '2026', categoria: 'Publicidade', video: '', arquivo: 'assets/media/hightea.mp4', imagem: 'assets/media/hightea.jpg' },
-    { titulo: 'Abelhas sem Ferrão', cliente: 'Animal Care', ano: '', categoria: 'Documentário', video: '', arquivo: 'assets/media/abelhas-sem-ferrao.mp4', imagem: 'assets/media/abelhas-sem-ferrao.jpg' },
+    { titulo: 'Abelhas sem Ferrão, parte 1', cliente: 'Animal Care', ano: '', categoria: 'Documentário', video: '', arquivo: 'assets/media/abelhas-sem-ferrao-parte-1.mp4', imagem: 'assets/media/abelhas-sem-ferrao-parte-1.jpg' },
+    { titulo: 'Abelhas sem Ferrão, parte 2', cliente: 'Animal Care', ano: '', categoria: 'Documentário', video: '', arquivo: 'assets/media/abelhas-sem-ferrao-parte-2.mp4', imagem: 'assets/media/abelhas-sem-ferrao-parte-2.jpg' },
+    { titulo: 'Abelhas sem Ferrão, parte 3', cliente: 'Animal Care', ano: '', categoria: 'Documentário', video: '', arquivo: 'assets/media/abelhas-sem-ferrao-parte-3.mp4', imagem: 'assets/media/abelhas-sem-ferrao-parte-3.jpg' },
     { titulo: 'After Movie da Semana Tecnológica', cliente: 'Semana Tecnológica', ano: '', categoria: 'Eventos', video: '', arquivo: 'assets/media/semana-tecnologica.mp4', imagem: 'assets/media/semana-tecnologica.jpg' },
     { titulo: 'Vídeo publicitário', cliente: 'Pubblicitá', ano: '', categoria: 'Publicidade', video: '', arquivo: 'assets/media/publicidade.mp4', imagem: 'assets/media/publicidade.jpg' },
     { titulo: 'Institucional Start', cliente: 'Start', ano: '', categoria: 'Institucional', video: '', arquivo: 'assets/media/start.mp4', imagem: 'assets/media/start.jpg', foco: '50% 42%' },
