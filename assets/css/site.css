@@ -381,3 +381,7 @@ p { text-wrap: pretty; }
   .idle-hint__track::after { animation: none; top: 30%; }
   .live-dot, .timeline li.is-now .when::before { animation: none; }
 }
+
+/* Logotipo em imagem */
+.nav__logo img { display: block; height: 44px; width: auto; }
+.nav.on-light .nav__logo img { filter: brightness(0); }
