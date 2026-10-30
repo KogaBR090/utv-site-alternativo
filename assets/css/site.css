@@ -383,5 +383,6 @@ p { text-wrap: pretty; }
 }
 
 /* Logotipo em imagem */
-.nav__logo img { display: block; height: 44px; width: auto; }
+.nav__logo { flex: none; }
+.nav__logo img { display: block; flex: none; height: 44px; width: auto; max-width: none; aspect-ratio: 140 / 104; object-fit: contain; }
 .nav.on-light .nav__logo img { filter: brightness(0); }
